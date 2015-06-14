@@ -1,0 +1,6 @@
+h1 = t('projects.name')
+- if @projects.empty?
+  h3 = t('projects.empty')
+- @projects.each do |p|
+  a href=project_path(p) = p.name
+  br

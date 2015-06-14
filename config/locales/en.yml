@@ -1,0 +1,14 @@
+en:
+  projects: 
+    name: Projects
+    empty: No projects
+    organizer: Organizer
+  participants:
+    name: Participants
+    empty: No participants yet
+    participate: participate
+    quit: quit
+    created: Participation registered
+    destroyed: Participation cancelled
+  naviagtion:
+    back: Back
