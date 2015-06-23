@@ -6,9 +6,11 @@ en:
   participants:
     name: Participants
     empty: No participants yet
-    participate: participate
-    quit: quit
+    participate: Participate
+    quit: Quit
     created: Participation registered
     destroyed: Participation cancelled
-  naviagtion:
+    thank_you: Thank you for registering in the 2015 Whackathon
+  navigation:
     back: Back
+    log_out: Log out

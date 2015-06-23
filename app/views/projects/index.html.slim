@@ -2,5 +2,20 @@ h1 = t('projects.name')
 - if @projects.empty?
   h3 = t('projects.empty')
 - @projects.each do |p|
-  a href=project_path(p) = p.name
+  h3 = p.name
+  h4 = p.description
+  h5 = "#{t('participants.name')}:"
+  - if p.users.empty?
+    span = t('participants.empty')
+  - else
+    ul
+    - p.users.each do |u|
+      li = u.email
   br
+  - if p.can_participate? current_user
+    = form_tag project_participations_path(p)
+      input.button type='submit' value=t('participants.participate') 
+  - if p.can_quit? current_user
+    = form_tag project_participations_path(p), method: :delete
+      input.button.alert type='submit' value=t('participants.quit') 
+  hr

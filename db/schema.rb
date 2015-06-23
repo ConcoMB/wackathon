@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20150614173811) do
   create_table "projects", force: :cascade do |t|
     t.string  "name"
     t.text    "description"
-    t.integer "organizer_id"
   end
 
   create_table "users", force: :cascade do |t|
