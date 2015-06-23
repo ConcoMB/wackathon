@@ -21,7 +21,16 @@ module Wackathon
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
-    config.assets.initialize_on_precompile = false
+    config.encoding = "utf-8"
+    config.active_support.escape_html_entities_in_json = true
+    config.assets.precompile += %w[admin/active_admin.js admin/active_admin.css]
+    
+    config.assets.enabled = true
+
+    # Version of your assets, change this if you want to expire all your assets
+    config.assets.version = '1.0'
+
+    # For Heroku deployments
+    config.assets.initialize_on_precompile = true
   end
 end
