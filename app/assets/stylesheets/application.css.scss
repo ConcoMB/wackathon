@@ -17,7 +17,7 @@
  */
 
 body {
-  background-image: url("back.png");
+  background-image: asset-url("back.png");
 }
 
 #header {
@@ -25,10 +25,9 @@ body {
   width: 100%;
   margin-bottom: 10px;
   background-color: black;
-}
-
-#header img {
-  height: 100px;
+  img {
+    height: 100px;
+  }
 }
 
 #main-row {

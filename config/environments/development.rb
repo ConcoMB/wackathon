@@ -1,4 +1,4 @@
-Rails.application.configure do
+Wackathon::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -19,7 +19,7 @@ Rails.application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
-  # Raise an error on page load if there are pending migrations.
+  # Raise an error on page load if there are pending migrations
   config.active_record.migration_error = :page_load
 
   # Debug mode disables concatenation and preprocessing of assets.
@@ -27,15 +27,23 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
-  # yet still be able to expire them through the digest params.
-  config.assets.digest = true
-
-  # Adds additional error checking when serving assets at runtime.
-  # Checks for improperly declared sprockets dependencies.
-  # Raises helpful error messages.
-  config.assets.raise_runtime_errors = true
-
-  # Raises error for missing translations
-  # config.action_view.raise_on_missing_translations = true
+  mail = AppConfiguration.for :mail
+  config.action_mailer.default_url_options = { host: mail.host, only_path: false }
+  config.action_mailer.asset_host = mail.host
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = mail.perform_deliveries == 'true'
+  config.action_mailer.raise_delivery_errors =  mail.raise_delivery_errors == 'true'
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.smtp_settings = {
+    openssl_verify_mode: mail.openssl_verify_mode,
+    enable_starttls_auto: mail.enable_starttls_auto == 'true',
+    address: mail.address,
+    port: mail.port.to_i,
+    domain: mail.domain,
+    user_name: mail.user_name,
+    password: mail.password,
+    authentication: mail.authentication
+  }
 end
