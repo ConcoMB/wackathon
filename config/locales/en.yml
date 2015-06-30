@@ -1,9 +1,17 @@
 en:
+  exception:
+    description: Description
+    request: Request exception
+    new: New Exception
+    created: Exception requested
+    thank_you: Whackathon 2015
+    already_requested: Already requested exception
   projects: 
     name: Projects
     empty: No projects
     organizer: Organizer
   participants:
+    full: Full!
     name: Participants
     empty: No participants yet
     participate: Participate
