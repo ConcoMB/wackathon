@@ -11,7 +11,7 @@ class ParticipationsController < ApplicationController
 
   def destroy
     @project = Project.find(params[:project_id])
-    redirect_to :back unless @project.can_quit? current_user
+    redirect_to :back unless @project.participates? current_user
     @project.users.delete current_user
     @project.save!
   end
