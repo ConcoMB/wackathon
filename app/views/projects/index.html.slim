@@ -1,9 +1,10 @@
 h1 = t('projects.name')
+hr
 - if @projects.empty?
   h3 = t('projects.empty')
 - @projects.each do |p|
   h3 = p.name
-  h4 = p.description
+  h5 = p.description
   h5 = "#{t('participants.name')}:"
   - if p.users.empty?
     span = t('participants.empty')
@@ -14,15 +15,15 @@ h1 = t('projects.name')
   br
   - if p.can_participate? current_user
     = form_tag project_participations_path(p)
-      input.button type='submit' value=t('participants.participate') 
+      input.button type='submit' value=t('participants.participate')
   - if p.is_full?
-    p.red =t('participants.full') 
+    p.red =t('participants.full')
   - if p.can_request_exception?(current_user)
     a href=new_project_project_exception_path(p)
-      input.button.success value=t('exception.request') 
+      input.button.success value=t('exception.request')
   - if p.has_requested_exception?(current_user)
     p =t('exception.already_requested')
   - if p.participates? current_user
     = form_tag project_participations_path(p), method: :delete
-      input.button.alert type='submit' value=t('participants.quit') 
+      input.button.alert type='submit' value=t('participants.quit')
   hr
