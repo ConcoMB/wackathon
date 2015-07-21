@@ -19,11 +19,13 @@ hr
   - if p.is_full?
     p.red =t('participants.full')
   - if p.can_request_exception?(current_user)
-    a href=new_project_project_exception_path(p)
-      input.button.success value=t('exception.request')
+    .center
+      a href=new_project_project_exception_path(p)
+        input.button.success value=t('exception.request')
   - if p.has_requested_exception?(current_user)
     p =t('exception.already_requested')
   - if p.participates? current_user
     = form_tag project_participations_path(p), method: :delete
-      input.button.alert type='submit' value=t('participants.quit')
+      .center
+        input.button.alert type='submit' value=t('participants.quit')
   hr
