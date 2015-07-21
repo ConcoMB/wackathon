@@ -6,8 +6,9 @@ en:
     created: Exception requested
     thank_you: Whackathon 2015
     already_requested: Already requested exception
-  projects: 
+  projects:
     name: Projects
+    technologies: Technologies
     empty: No projects
     organizer: Organizer
   participants:

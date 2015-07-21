@@ -3,9 +3,11 @@ hr
 - if @projects.empty?
   h3 = t('projects.empty')
 - @projects.each do |p|
-  h3 = p.name
+  h3.bold = p.name
   h5 = p.description
-  h5 = "#{t('participants.name')}:"
+  h5.bold = "#{t('projects.technologies')}:"
+  p = p.technologies
+  h5.bold = "#{t('participants.name')}:"
   - if p.users.empty?
     span = t('participants.empty')
   - else
