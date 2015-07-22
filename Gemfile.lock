@@ -402,6 +402,3 @@ DEPENDENCIES
   timecop
   twitter-bootstrap-rails
   uglifier
-
-BUNDLED WITH
-   1.10.3

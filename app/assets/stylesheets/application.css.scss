@@ -33,6 +33,8 @@ body {
 #main-row {
   background-color: white;
   padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 50px;
 }
 
 #log-out {
@@ -49,4 +51,33 @@ body {
 
 .bold {
   font-weight: bold;
+}
+
+.overlay {
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.top-line {
+  background: rgb(165, 205, 57);
+  height: 5px;
+}
+
+#log-out {
+  background: #a5cd39;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.header {
+  text-align: right;
+}
+
+.title {
+  text-align: center;
+  margin: 50px auto;
 }
