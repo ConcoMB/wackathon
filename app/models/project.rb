@@ -8,7 +8,7 @@ class Project < ActiveRecord::Base
   validates :name, :description, presence: true
 
   def can_participate?(user)
-    users.length != MAX_PARTICIPANTS && user.project.nil?
+    users.length < MAX_PARTICIPANTS && user.project.nil?
   end
 
   def participates?(user)
@@ -16,7 +16,7 @@ class Project < ActiveRecord::Base
   end
 
   def is_full?
-    users.size == MAX_PARTICIPANTS
+    users.size >= MAX_PARTICIPANTS
   end
 
   def can_request_exception?(user)
