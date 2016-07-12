@@ -16,6 +16,6 @@ html
           = t('navigation.log_out')
     .row.title
         a href=projects_path
-          = image_tag "wackathon_logo.png"
+          img#logo src=image_path("wackathon_logo.png")
     #main-row.row
       = yield
