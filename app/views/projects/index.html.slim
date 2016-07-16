@@ -5,9 +5,7 @@ hr
 - @projects.each do |p|
   h3.bold = p.name
   p = p.description.html_safe
-  h5.bold = "#{t('projects.technologies')}:"
-  p = p.technologies
-  h5.bold = "#{t('participants.name')}:"
+  h5.bold = t('participants.participants')
   - if p.users.empty?
     span = t('participants.empty')
   - else

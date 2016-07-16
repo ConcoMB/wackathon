@@ -4,10 +4,11 @@ en:
     technologies: Tecnologías
     empty: Sin proyectos
   participants:
+    participants: Participantes
     full: Lleno!
     name: Participantes
     empty: Sin participantes
-    participate: Participata!
+    participate: Participa!
     quit: Abandonar
     created: Participación registrada
     destroyed: Participación cancelada
