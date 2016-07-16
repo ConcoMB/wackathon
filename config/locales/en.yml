@@ -1,17 +1,17 @@
 en:
   projects:
-    name: Projects
-    technologies: Technologies
-    empty: No projects
+    name: Proyectos
+    technologies: Tecnologías
+    empty: Sin proyectos
   participants:
-    full: Full!
-    name: Participants
-    empty: No participants yet
-    participate: Participate
-    quit: Quit
-    created: Participation registered
-    destroyed: Participation cancelled
-    thank_you: Thank you for registering in the 2015 Whackathon
+    full: Lleno!
+    name: Participantes
+    empty: Sin participantes
+    participate: Participata!
+    quit: Abandonar
+    created: Participación registrada
+    destroyed: Participación cancelada
+    thank_you: Gracias por registrarte en la Wcaktahon 2016
   navigation:
-    back: Back
-    log_out: Log out
+    back: Atras
+    log_out: Cerrar sesión
