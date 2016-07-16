@@ -1,7 +1,0 @@
-h3 = t('exception.new')
-= form_for ProjectException.new(project: @project, user: current_user), url: project_project_exceptions_path(@project) do |f|
-  label =t('exception.description')
-  = f.text_area :description
-  = f.hidden_field :user_id, value: current_user.id
-  = f.hidden_field :project_id, value: @project.id
-  = f.submit class: 'button success', value: t('exception.request')

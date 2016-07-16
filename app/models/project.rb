@@ -3,7 +3,6 @@ class Project < ActiveRecord::Base
   MAX_PARTICIPANTS = 7
 
   has_many :users
-  has_many :project_exceptions
   validates :users, length: { maximum: MAX_PARTICIPANTS }
   validates :name, :description, presence: true
 
@@ -17,14 +16,6 @@ class Project < ActiveRecord::Base
 
   def is_full?
     users.size >= MAX_PARTICIPANTS
-  end
-
-  def can_request_exception?(user)
-    !participates?(user) && is_full? && user.project.blank? && !has_requested_exception?(user)
-  end
-
-  def has_requested_exception?(user)
-    project_exceptions.any? { |e| e.user == user }
   end
 
 end

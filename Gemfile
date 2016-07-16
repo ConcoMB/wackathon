@@ -39,7 +39,7 @@ gem 'active_model_serializers', github: 'rails-api/active_model_serializers', br
 gem 'foreman'
 
 # Active Admin
-gem 'activeadmin', github: 'activeadmin'
+gem 'rails_admin'
 gem 'inherited_resources'
 gem 'formtastic'
 gem 'ransack'
