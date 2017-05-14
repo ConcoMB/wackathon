@@ -29,6 +29,7 @@ gem 'jquery-rails'
 gem 'loadjs'
 
 gem 'devise'
+gem 'redcarpet'
 
 gem 'foundation-rails'
 

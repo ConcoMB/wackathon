@@ -4,7 +4,7 @@ hr
   h3 = t('projects.empty')
 - @projects.each do |p|
   h3.bold = p.name
-  p = p.description.html_safe
+  = Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(p.description).html_safe
   h5.bold = t('participants.participants')
   - if p.users.empty?
     span = t('participants.empty')
