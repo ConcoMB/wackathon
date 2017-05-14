@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-  MAX_PARTICIPANTS = 7
+  MAX_PARTICIPANTS = 6
 
   has_many :users
   validates :users, length: { maximum: MAX_PARTICIPANTS }
